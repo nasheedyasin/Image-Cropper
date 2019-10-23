@@ -1,0 +1,21 @@
+<p>image-cropper works!</p>
+<div class="img-container">
+    <img #image [src]="imageSource" >
+</div>
+
+
+<input [(ngModel)]="imageDetails.ImageName">
+<!-- <p>{{croppedImageName}}</p> -->
+<img [src]="imageDestination" [height]="imgHeight/4" [width]="imgWidth/4" class="img-preview">
+<button (click)="addtoImgList()">Save Zone</button>
+
+
+<div *ngFor = "let image of imageDetailsList">
+    <label>{{image.ImageName}}</label>
+    <a [href] = "image.ImageDataURL" target="_blank">Click to preview template</a>
+    <!-- <img [src]="image.ImageDataURL" [height]="image.ImgH" [width]="image.ImgH" class="img-preview"> -->
+</div>
+
+<div>
+    <button (click)="uploadTemplates()">Upload All</button>
+</div>
